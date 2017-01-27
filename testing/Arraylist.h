@@ -14,7 +14,7 @@ typedef struct arrayList
 
 ArrayList arrayListInitialize(int capacity);
 
-void arrayListAdd(ArrayList arr, valueType val);
+void arrayListAdd(ArrayList *arr, valueType val);
 void arrayListAddIndex(ArrayList *arr, const int index, valueType val);
 void arrayListAddAll(ArrayList *arr, ArrayList *arrIn);
 void arrayListAddAllIndex(ArrayList *arr, ArrayList *arrIn,

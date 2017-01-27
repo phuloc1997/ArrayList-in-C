@@ -1,26 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef int valueType;
-
-typedef enum boolean { FALSE , TRUE  } Bool;
-
-typedef struct ArrayList
-{
-	valueType *pointer;
-	int usedSize;
-	int capacity;
-}ArrayList;
-
-Bool arrayListEnsureCapacity(ArrayList *arr, int size);
-void arrayListTrimToSize(ArrayList *arr);
-Bool isFull(ArrayList *arr);
+#include "Arraylist.h"
 
 /**[Check 26/1/2017]Making list
 
 	*ArrayList arrayListInitialize(const unsigned int capacity)
 
 **/
+
 ArrayList arrayListInitialize(int capacity)
 {
 	ArrayList temp; 
@@ -273,6 +261,7 @@ valueType arrayListRemoveRange(ArrayList *arr, const unsigned int start, const u
 		puts("List is already empty!");
 		return -1;
 	}
+
 	if (start<0 || end<0 || start>arr->usedSize-1 || end>arr->usedSize-1 || start > end)
 	{
 		puts("Invalid bounds!");
@@ -308,7 +297,6 @@ valueType arrayListRemoveRange(ArrayList *arr, const unsigned int start, const u
 			}
 		}
 	}
-
 }
 
 void arrayListTrimToSize(ArrayList *arr)
@@ -338,10 +326,4 @@ valueType arrayListSet(ArrayList *arr, valueType val, int index)
 int arrayListSize(ArrayList *arr)
 {
 	return arr->capacity;
-}
-
-int main(int argc, char *argv[])
-{
-	getchar();
-	return 0;
 }
