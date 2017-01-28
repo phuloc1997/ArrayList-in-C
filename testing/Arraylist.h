@@ -1,11 +1,11 @@
-#ifndef ArrayList
-#define ArrayList
+#ifndef arrayList
+#define arrayList
 
 typedef int valueType;
 
 typedef enum boolean { FALSE, TRUE } Bool;
 
-typedef struct arrayList
+typedef struct ArrayList
 {
 	valueType *pointer;
 	int usedSize;
@@ -14,7 +14,7 @@ typedef struct arrayList
 
 ArrayList arrayListInitialize(int capacity);
 
-void arrayListAdd(ArrayList *arr, valueType val);
+void arrayListAdd(ArrayList *l, valueType val);
 void arrayListAddIndex(ArrayList *arr, const int index, valueType val);
 void arrayListAddAll(ArrayList *arr, ArrayList *arrIn);
 void arrayListAddAllIndex(ArrayList *arr, ArrayList *arrIn,
